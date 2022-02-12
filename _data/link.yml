@@ -1,0 +1,37 @@
+class:
+  class_name: 友情链接
+  link_list:
+    1:
+      name: Wood
+      link: https://wood1314.github.io/
+      avatar: https://cdn.jsdelivr.net/gh/Dragonliu2018/FigureBed@master/img/woodavatar.jpg
+      descr: 舍友，pwn佬
+    2:
+      name: 陈妙明
+      link: https://paleknight.tk/
+      avatar: 
+      descr: Linux佬  
+    3:
+      name: 书鱼
+      link: https://kit4y.github.io/
+      avatar: https://cdn.jsdelivr.net/gh/Dragonliu2018/FigureBed@master/img/kit4yavatar.jpg
+      descr: 学长，CTF大佬     
+    4:
+      name: Cooook
+      link: https://cooook.github.io/
+      avatar: https://cdn.jsdelivr.net/gh/Dragonliu2018/FigureBed@master/img/Cooookavatar.jpg
+      descr: 学弟，全能佬  
+
+  class2:
+   class_name: 链接无效
+   link_list:
+     1:
+       name: 梦xxx
+       link: https://blog.xxx.com
+       avatar: https://xxxx/avatar.png
+       descr: xxxx
+     2:
+       name: xx
+       link: https://www.axxxx.cn/
+       avatar: https://x
+       descr: xx
