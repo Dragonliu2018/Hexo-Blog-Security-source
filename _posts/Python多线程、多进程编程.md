@@ -51,7 +51,7 @@ def func(data):
 def test_multiprocess():
     data_list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     core = 4  # 4进程并行
-    mod = math.ceil(len(data_list) / 4)  # 向上取整
+    mod = math.ceil(len(data_list) / core)  # 向上取整
     group_data = [data_list[i:i + mod] for i in range(0, len(data_list), mod)]
     for data in group_data:
         # process = multiprocessing.Process(target=func, args=(5,))

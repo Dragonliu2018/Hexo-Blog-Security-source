@@ -40,7 +40,7 @@ print(str2)  # '123\tabc'
 print(str2.strip("\'"))  # 123\tabc
 ```
 
-<font color=red>**注意**</font>：字符串使用 `repr` 函数后输出是会在字符串前后自动加上单引号（见print第二行），print第三行是去掉了字符串首尾的单引号。关于`strip`函数，详见[博客](dragonliu.tk/2022/02/09/python去除字符串首尾的空格/)。
+<font color=red>**注意**</font>：字符串使用 `repr` 函数后输出是会在字符串前后自动加上单引号（见print第二行），print第三行是去掉了字符串首尾的单引号。关于`strip`函数，详见[博客](https://dragonliu.tk/2022/02/09/python%E5%8E%BB%E9%99%A4%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%A6%96%E5%B0%BE%E7%9A%84%E7%A9%BA%E6%A0%BC/)。
 
 # 4 文件读取
 
