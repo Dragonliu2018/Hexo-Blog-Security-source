@@ -2,6 +2,7 @@
 title: python模块graphviz使用教程
 tags:
   - python
+  - Graphviz
 categories:
   - [环境与工具]
   - [开发]

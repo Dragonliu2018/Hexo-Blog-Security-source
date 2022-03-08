@@ -1,5 +1,5 @@
 ---
-title: python list分组
+title: python列表操作之分组
 tags:
   - python
 categories:
