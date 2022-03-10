@@ -140,9 +140,9 @@ from sqlalchemy.orm import sessionmaker
 
 HOST = '127.0.0.1'
 PORT = 3306
-USERNAME = 'root'
-PASSWORD = 'root'
-DB = 'ruoyi_vue'
+USERNAME = 'xxx'  # mysql数据库用户名
+PASSWORD = 'xxx'  # 密码
+DB = 'xxx'  # 数据库名称
 # f代表可以使用{}引用变量
 DB_URI = f'mysql+pymysql://{USERNAME}:{PASSWORD}@{HOST}:{PORT}/{DB}'
 
