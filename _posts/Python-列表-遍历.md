@@ -1,5 +1,5 @@
 ---
-title: python列表操作之遍历
+title: Python-列表-遍历
 tags:
   - python
 categories:

@@ -1,5 +1,5 @@
 ---
-title: MySQL数据类型以及sqlalchemy中的对应
+title: MySQL-数据类型以及sqlalchemy中的对应
 tags:
   - MySQL
   - python

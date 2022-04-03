@@ -1,5 +1,5 @@
 ---
-title: 判断python dict或list 中是否含有某个元素或key
+title: Python-字典-判断dict或list中是否含有某个元素或key
 tags:
   - python
 categories:

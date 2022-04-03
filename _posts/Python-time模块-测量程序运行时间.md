@@ -1,5 +1,5 @@
 ---
-title: python测量程序运行时间
+title: Python-time模块-测量程序运行时间
 tags:
   - python
 categories:

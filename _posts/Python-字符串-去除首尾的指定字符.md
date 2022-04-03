@@ -1,5 +1,5 @@
 ---
-title: python去除字符串首尾的指定字符
+title: Python-字符串-去除首尾的指定字符
 tags:
   - python
 categories:

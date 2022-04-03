@@ -1,5 +1,5 @@
 ---
-title: python中的全局变量——list
+title: Python-全局变量-list
 date: 2021-06-27 09:44:22
 tags: 
 - python

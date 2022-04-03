@@ -1,5 +1,5 @@
 ---
-title: Python中的类(class)
+title: Python-类-使用简易教程
 tags:
   - python
 categories:

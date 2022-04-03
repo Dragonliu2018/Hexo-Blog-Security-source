@@ -1,5 +1,5 @@
 ---
-title: Python取整
+title: Python-取整
 tags:
   - python
 categories:

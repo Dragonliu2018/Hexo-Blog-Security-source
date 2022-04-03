@@ -1,5 +1,5 @@
 ---
-title: python列表操作之排序
+title: Python-列表-排序
 tags:
   - python
 categories:

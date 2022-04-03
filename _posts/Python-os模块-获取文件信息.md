@@ -1,5 +1,5 @@
 ---
-title: Python获取文件信息
+title: Python-os模块-获取文件信息
 tags:
   - python
 categories:

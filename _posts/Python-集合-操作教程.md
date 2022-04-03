@@ -1,5 +1,5 @@
 ---
-title: Python集合(set)操作
+title: Python-集合-操作教程
 tags:
   - python
 categories:

@@ -1,5 +1,5 @@
 ---
-title: jupyter使用
+title: Python-jupyter-使用教程
 date: 2022-01-17 09:44:22
 tags: 
 - python

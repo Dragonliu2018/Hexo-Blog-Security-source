@@ -1,5 +1,5 @@
 ---
-title: python列表操作之去重
+title: Python-列表-去重
 tags:
   - python
 categories:

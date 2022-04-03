@@ -1,5 +1,5 @@
 ---
-title: MySQL错误1366：字段编码报错
+title: MySQL-错误1366：字段编码报错
 tags:
   - MySQL
   - python

@@ -1,5 +1,5 @@
 ---
-title: MySQL错误1406：超长字符串
+title: MySQL-错误1406：超长字符串
 tags:
   - MySQL
   - python

@@ -1,5 +1,5 @@
 ---
-title: matplotlib使用
+title: Python-matplotlib-使用简易教程
 date: 2022-01-17 09:44:22
 tags: 
 - python

@@ -1,5 +1,5 @@
 ---
-title: Python通过SQLAlchemy操作Mysql
+title: Python-Mysql-通过SQLAlchemy操作
 tags:
   - python
   - MySQL

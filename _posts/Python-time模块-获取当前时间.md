@@ -1,5 +1,5 @@
 ---
-title: Python获取当前时间
+title: Python-time模块-获取当前时间
 tags:
   - python
 categories:

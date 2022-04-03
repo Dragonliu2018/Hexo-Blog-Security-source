@@ -1,5 +1,5 @@
 ---
-title: sqlalchemy中的聚合函数
+title: Python-Mysql-sqlalchemy中的聚合函数
 tags:
   - MySQL
   - python
