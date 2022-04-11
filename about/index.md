@@ -74,7 +74,7 @@ comments: false
 * **Git**：`TortoiseGit`
 * **文件(夹)差异比较**：`Beyond Compare`
 * **虚拟机**：`VMware`
-* **科学上网**：`Clash`
+* **科学上网**：`Clash` + [Dukou](https://dukou.icu/user/index)
 * **浏览器**：`Chrome`
   * 拓展管理：`扩展管理器（Extension Manager）`
   * 广告拦截：`AdGuard 广告拦截器`、`uBlock Origin`、`过滤广告 為 Youtube™`
@@ -84,7 +84,10 @@ comments: false
   * 油管弹幕：`Bulletchat for YouTube`
 * **内存使用量、CPU温度等**：`鲁大师`
 * **思维导图**：`XMind`
-* **远程登录**：`xshell`，文件传输——`xftp`
+* **远程登录**：`MobaXterm` 汇总了xshell、xftp等软件的功能，十分强大
+  * 登陆：`xshell`，`putty`
+  * 文件传输：`xftp`、`filezilla`
+
 * **Linux子系统**：wsl2+docker系统定制+Terminus+zsh+oh-my-zsh
 * **文字识别**：天若ocr文字识别
 * **论文写作**：VSCode + Latex + SumatraPDF(小屏幕时使用) [链接](https://zhuanlan.zhihu.com/p/38178015)
