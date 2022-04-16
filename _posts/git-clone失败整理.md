@@ -46,3 +46,12 @@ fatal: unable to access 'https://github.com/getredash/redash.git/': Failed to co
 ```
 
 翻墙是一种方法，其他待整理
+
+# 3 OpenSSL SSL_connect: SSL_ERROR_SYSCALL
+
+```sh
+Cloning into 'addlcov'...
+fatal: unable to access 'https://github.com/Dragonliu2018/addlcov.git/': OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443
+```
+
+又试了一次，成功下载。

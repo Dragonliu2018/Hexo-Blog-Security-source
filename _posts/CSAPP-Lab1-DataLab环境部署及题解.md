@@ -16,11 +16,290 @@ date: 2022-04-09 01:26:20
 
 该实验是《深入理解计算机系统》（英文缩写CSAPP）课程附带实验——Lab1：Data Lab。
 
-
+大四下学期在做计组助教，需要部署Lab1，期间遇到了不少的问题，多亏了舍友的帮助，记录下。（🥦）
 
 # 2 环境部署
 
+部署时阅读`README`文件，包括子目录下的；项目使用Perl语言编写。
 
+<img src="https://s2.loli.net/2022/04/12/e1jI2T7b3QhiqyU.png" width = "800" height = "300" alt="图片名称" align=center id=140 />
+
+## 2.1 网站运行
+
+在项目主目录运行`make start`：
+
+```sh
+[root@VM-4-8-centos lab1]# sudo make start
+######################################
+# start Data lab Online contest
+######################################
+(cd contest; make start)
+make[1]: Entering directory '/root/Lab/lab1/contest'
+/bin/sh: ./contest-timer.pl: Permission denied
+/bin/sh: ./contest.pl: Permission denied
+make[1]: *** [Makefile:13: start] Error 1
+make[1]: Leaving directory '/root/Lab/lab1/contest'
+make: *** [Makefile:15: start] Error 2
+```
+
+出现报错，是因为pl脚本无执行权限，需要加权限：
+
+```sh
+cd ./contest
+chmod +x *.pl
+```
+
+之后报错：
+
+```sh
+Can't locate CGI.pm in @INC (you may need to install the CGI module)
+```
+
+原因是缺少CGI模块，[参考](https://blog.hostonnet.com/ah01215-cant-locate-cgi-pm-in-inc)
+
+```sh
+sudo yum install perl-CGI
+```
+
+此时浏览器访问`http://服务器IP:8080/`，（**注意服务器开启8080端口和8081端口**)
+
+```html
+Scoreboard for the Data Lab "Beat the Prof" Contest
+Warning: The instructor (Tiger) must submit an entry before the results of the contest can be displayed.
+
+To submit your instructor's entry: linux> ./src/driver.pl -u "The Prof"
+```
+
+这时候我们需要在后台执行提示的命令：
+
+```sh
+[root@VM-4-8-centos lab1]# ./src/driver.pl -u "The Prof"
+-bash: ./src/driver.pl: Permission denied
+```
+
+报错显示需要加权限：
+
+```sh
+cd /root/Lab/lab1/src
+chmod +x *.pl
+```
+
+之后再次报错：
+
+```sh
+[root@VM-4-8-centos lab1]# ./src/driver.pl -u "The Prof"
+Can't locate Driverlib.pm in @INC (you may need to install the Driverlib module) (@INC contains: . /usr/local/lib64/perl5 /usr/local/share/perl5 /usr/lib64/perl5/vendor_perl /usr/share/perl5/vendor_perl /usr/lib64/perl5 /usr/share/perl5) at ./src/driver.pl line 19.
+BEGIN failed--compilation aborted at ./src/driver.pl line 19.
+```
+
+这里的显示`Driverlib.pm `不存在，将往年Lab中的该文件复制到`/usr/lib64/perl5`（可变，只要在报错提示中的`@INC`中即可），然后再次执行：
+
+```sh
+[root@VM-4-8-centos lab1]# ./src/driver.pl -u "The Prof"
+Can't locate Driverhdrs.pm in @INC (you may need to install the Driverhdrs module) (@INC contains: . /usr/local/lib64/perl5 /usr/local/share/perl5 /usr/lib64/perl5/vendor_perl /usr/share/perl5/vendor_perl /usr/lib64/perl5 /usr/share/perl5) at /usr/lib64/perl5/Driverlib.pm line 13.
+BEGIN failed--compilation aborted at /usr/lib64/perl5/Driverlib.pm line 13.
+Compilation failed in require at ./src/driver.pl line 20.
+BEGIN failed--compilation aborted at ./src/driver.pl line 20.
+```
+
+`Driverhdrs.pm`文件与上面的`Driverlib.pm `文件同理，再次执行：
+
+```sh
+[root@VM-4-8-centos lab1]# ./src/driver.pl -u "The Prof"
+./src/driver.pl: ERROR: No executable dlc binary.
+```
+
+进入`src`子目录下执行，出现报错：[参考](https://stackoverflow.com/questions/33059187/fatal-error-gnu-stubs-32-h-no-such-file-or-directory-but-stubs-64-h-is-prese)
+
+```sh
+[root@VM-4-8-centos src]# ./driver.pl -u "The Prof"
+fatal error: gnu/stubs-32.h: No such file or directory" but stubs-64.h is present
+```
+
+```sh
+sudo yum -y install glibc-devel.i686 glibc-devel
+```
+
+之后就可以成功执行了，但是前端页面仍然不变，需要提交如下指令：（非常坑，还是看文档不仔细，🥦
+
+```sh
+[root@VM-4-8-centos src]# ./driver.pl -u "Tiger"
+```
+
+在配置文件`./contest/Contest.pm`中可以查看：
+
+```pm
+$SERVER_NAME = "10.0.2.15";  # 需要修改成自己的服务器
+$BASE_USERID = "Tiger";  # 初始用户名
+$UPDATE_PERIOD = 10;  # 每10s刷新数据
+$REQUESTD_PORT = 8080;  # Request server's port
+$RESULTD_PORT = 8081;   # Result server's port
+# ... 还有好多其他配置信息
+```
+
+到此前端可以正常显示了。
+
+## 2.2 出题
+
+具体操作参考`./src/dlcdir/README`
+
+1. `./src/puzzles`目录下存放试题，新出的题目需要放在此处，由于本次实验出题主要更改原试题的名称，比较简单，魔改即可（包括文件名、函数名、注释等）
+
+2. 将新出的题目名称添加到`./src/dlcdir/legallist.c`中的`legallist`中，魔改：
+
+   ```c
+   {{"isZero"}, 0, 3, {'~', '&', '!', '^', '|', '+', LS, RS, 0}},
+   ```
+
+3. 然后在`./src/dlcdir`目录下重新编译：
+
+   ```
+   make superclean
+   make
+   ```
+
+4. 此时如果成功执行，`./src/dlcdir`目录下会生成`dlc`可执行文件，并将其复制到上级目录中；
+5. 在`./src/selections.c`文件中存有你要选择出题的题目列表，默认13个，根据需求进行修改。
+
+**下面是make过程中出现的报错记录：**
+
+```sh
+[root@VM-4-8-centos dlcdir]# make
+bison -y -dv ANSI-C.y
+make: bison: Command not found
+make: *** [Makefile:40: y.tab.h] Error 127
+```
+
+原因是未安装bison，进行安装：[参考](https://blog.csdn.net/weborn/article/details/6794671)
+
+```sh
+yum install -y bison
+```
+
+然后继续报错：
+
+```sh
+[root@VM-4-8-centos dlcdir]# make
+bison -y -dv ANSI-C.y
+ANSI-C.y:653.15-16: error: $$ for the midrule at $4 of ‘declaring.list’ has no declared type
+              $$ = AppendDecl($1, $3, Redecl);
+               ^^
+ANSI-C.y:708.15-16: error: $$ for the midrule at $4 of ‘default.declaring.list’ has no declared type
+             { $$ = AppendDecl($1, $3, NoRedecl); }
+               ^^
+ANSI-C.y:1408.14-15: error: $$ for the midrule at $3 of ‘labeled.statement’ has no declared type
+            { $$ = BuildLabel($1, NULL); }
+              ^^
+make: *** [Makefile:40: y.tab.h] Error 1
+```
+
+原因是bison版本太新，需要更换版本：[参考](https://lists.gnu.org/archive/html/help-bison/2009-03/msg00015.html)
+
+查看版本：
+
+```sh
+[root@VM-4-8-centos dlcdir]# bison -V
+bison (GNU Bison) 3.0.4
+Written by Robert Corbett and Richard Stallman.
+
+Copyright (C) 2015 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+```
+
+删除bison：
+
+```sh
+yum remove bison.x86_64
+```
+
+下面更换bison版本：[参考](https://www.shuzhiduo.com/A/q4zVVOZWzK/)
+
+1. 下载bison的压缩包，版本要**低于1.75**，[链接](http://ftp.gnu.org/gnu/bison/)
+
+2. 安装：
+
+   ```sh
+   cd bison-x.x
+   ./configure
+   make
+   sudo make install
+   ```
+
+***
+
+bison版本正确后，下面继续做make，但是报了一大堆warning，然后报错：
+
+```sh
+heap.h:69:21: warning: inline function ‘HeapAllocate’ declared but never defined
+ GLOBAL inline void *HeapAllocate(int number, int size);
+...
+/root/Lab/lab1/src/dlcdir/check.c:339: undefined reference to `MakeConstSlong'
+/root/Lab/lab1/src/dlcdir/check.c:339: undefined reference to `MakeReturnCoord'
+collect2: error: ld returned 1 exit status
+make: *** [Makefile:36: dlc] Error 1
+```
+
+注意：这里搜索最后的报错部分无果，搜索warning部分可以解决。
+
+这是内联函数`inline`引发的warning，添加编译选项`-fgnu89-inline`来修复，修改`./src/Makefile`，[参考](https://stackoverflow.com/questions/13120633/how-to-deal-with-warning-inline-function-stat64-declared-but-never-defined)
+
+```makefile
+_CFLAGS = -g  -O2 -fgnu89-inline
+```
+
+下面继续编译，之前需要清理下：
+
+```sh
+make clean
+make 
+```
+
+现在就可以成功编译了，但是此时是`dlc`是64位可执行程序，在我们学生默认的32位debian虚拟机是无法运行的：
+
+```sh
+liuzhenlong@debian:~/Lab_new/lab1-handout$ ./dlc bits.c
+-bash: ./dlc: cannot execute binary file: Exec format error
+liuzhenlong@debian:~/Lab_new/lab1-handout$ file dlc
+dlc: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=1dcd289bac34aee0dde34abd43a959588d79b382, with debug_info, not stripped
+```
+
+所以需要修改成32位编译：[参考](https://www.cnblogs.com/xuejianbest/p/10285173.html)
+
+```makefile
+_CFLAGS = -g  -O2 -fgnu89-inline -m32
+```
+
+下面继续编译，之前需要清理下：
+
+```sh
+make clean
+make 
+liuzhenlong@debian:~/Lab_new/lab1-handout$ file dlc
+dlc: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=ec898c28449afe1d16254e2cbe67617c1874b026, with debug_info, not stripped
+```
+
+现在`dlc`可执行程序已经生成。
+
+## 2.3 导出实验
+
+在项目主目录下执行：
+
+```sh
+[root@VM-4-8-centos lab1]# make all
+[root@VM-4-8-centos lab1]# ll
+total 1232
+drwxr-xr-x 2 root root    4096 Apr  9 22:20 contest
+drwxr-xr-x 4 root root    4096 Apr  8 10:58 grade
+drwxr-xr-x 2 root root    4096 Apr 13 00:13 lab1-handout
+-rw-r--r-- 1 root root 1228800 Apr 13 00:13 lab1-handout.tar
+-rw-r--r-- 1 root root    2436 Apr  7 23:06 Makefile
+-rw-r--r-- 1 root root    8097 Apr  7 23:06 README
+drwxr-xr-x 5 root root    4096 Apr 13 00:13 src
+drwxr-xr-x 2 root root    4096 Apr  7 23:04 writeup
+```
+
+`lab1-handout.tar`是生成的实验，将其分发给同学们即可进行实验了。
 
 # 3 题解
 
@@ -375,10 +654,6 @@ int float_f2i(unsigned uf) {
 /*  */
 
 ```
-
-
-
-
 
 # X 参考
 

@@ -3,6 +3,8 @@ title: 看板
 comments: false
 ---
 
+> 联系方式：dragonliu2018@gmail.com
+
 # 1 分工
 
 ## 1.0 图床
