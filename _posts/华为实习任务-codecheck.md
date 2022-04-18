@@ -3,7 +3,7 @@ title: 华为实习任务-codecheck
 tags:
   - 重构
 categories:
-  - 未定义
+  - 未分类
 toc: true
 mathjax: true
 top: false
