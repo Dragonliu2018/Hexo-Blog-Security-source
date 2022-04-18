@@ -1,7 +1,6 @@
 ---
 title: Pycharm(IntelliJ系列)的Low Memory问题
 tags:
-  - python
 categories:
   - [环境与工具]
 toc: true

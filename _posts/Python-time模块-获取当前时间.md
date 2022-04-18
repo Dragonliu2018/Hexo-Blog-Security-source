@@ -1,9 +1,8 @@
 ---
 title: Python-time模块-获取当前时间
 tags:
-  - python
 categories:
-  - 开发
+  - Python
 toc: true
 mathjax: true
 top: false

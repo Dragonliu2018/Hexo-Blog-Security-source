@@ -1,9 +1,8 @@
 ---
 title: CSAPP-Lab1-DataLab环境部署及题解
 tags:
-  - 计组
 categories:
-  - 基础
+  - 计组
 toc: true
 mathjax: true
 top: false
@@ -326,16 +325,22 @@ drwxr-xr-x 2 root root    4096 Apr  7 23:04 writeup
 **实现**：
 
 ```c++
-// 法1（标准答案）
+// 法1（标准答案-3'）
 /* */
 int lsbZero(int x) {
   return (x | 1) + ~0;
 }
 
-// 法2（目前最佳答案）
+// 法2（目前最佳答案-2'）
 /* 右移一位再左移一位实现把最低一位有效位置0 */
 int lsbZero(int x) {
   return x >> 1 << 1;
+}
+
+// 法3（来自学生-2'）
+/* 和 0xfffffffe 相与即可 */
+int lsbZero(int x) {
+  return x & (~1);
 }
 ```
 
@@ -363,7 +368,7 @@ int lsbZero(int x) {
 **实现**：
 
 ```c++
-// 法1（标准答案）
+// 法1（标准答案-3'）
 /* 将0xFF移动到对应字节，然后取按位异或 */
 int nuaa_question2(int x, int n) {
   /* Shift x n*8 positions right */
@@ -399,7 +404,7 @@ int nuaa_question2(int x, int n) {
 **实现**：
 
 ```c++
-// 法1（标准答案）
+// 法1（标准答案-9'）
 /* 移位取指定字节，异或，两次取逻辑非 */
 int byteXor(int x, int y, int n) {
   int shift = n << 3;
@@ -409,7 +414,7 @@ int byteXor(int x, int y, int n) {
   return !!cmp & 1 ;
 }
 
-// 法2（目前最佳答案）
+// 法2（目前最佳答案-8'）
 /* 法1最后的&1是多余的操作 */
 int byteXor(int x, int y, int n) {
   int shift = n << 3;
@@ -417,6 +422,14 @@ int byteXor(int x, int y, int n) {
   int ys = y >> shift;
   int cmp = (xs & 0xFF) ^ (ys & 0xFF);
   return !!cmp;
+}
+
+// 法3（来自学生-6'）
+/* 把⽬标位移到最低位然后⽤异或⽐较⼀下是否相等即可 */
+int lsbZero(int x) {
+    _ = n << 3;
+  __ = ((x ^ y) >> _) & 0xff;
+  return !!(__);
 }
 ```
 
@@ -443,23 +456,23 @@ int byteXor(int x, int y, int n) {
 **实现**：
 
 ```c++
-// 法1（标准答案）
+// 法1（标准答案-8'）
 /* */
 int logicalAnd(int x, int y) {
   int z = ~!x & ~!y;
   return ~(z + 1) & 1;
 }
 
-// 法2（目前最佳答案）
-/* 把x和y分别取NOT，二者相或后再取NOT，即可得到逻辑与 */
-int logicalAnd(int x, int y) {
-   return !((!x)|(!y));
-}
-
-// 法3（目前最佳答案）
+// 法2（其他思路-5'）
 /* 把x和y分别转换为逻辑的0和1，再相与 */
 int logicalAnd(int x, int y) {
    return (!(!x))&(!(!y));
+}
+
+// 法3（目前最佳答案-4'）
+/* 把x和y分别取NOT，二者相或后再取NOT，即可得到逻辑与 */
+int logicalAnd(int x, int y) {
+   return !((!x)|(!y));
 }
 ```
 
@@ -523,7 +536,7 @@ int logicalOr(int x, int y) {
 **实现**：
 
 ```c++
-// 法1（标准答案）
+// 法1（标准答案-16'）
 /* */
 int rotateLeft(int x, int n) {
     /* Create mask for n = 0 */
@@ -537,7 +550,7 @@ int rotateLeft(int x, int n) {
     return (zmask&x) | (~zmask&(left|right));
 }
 
-// 法2
+// 法2(其他方法-10’)
 /* 先构造y为高（32-n）位为0的y，再与x右移（32-n）的x相与，相当于储存了x的高n位数，最后再与x左移n位相加即可。 */
 int rotateLeft(int x, int n) {
     int y;
@@ -654,6 +667,36 @@ int float_f2i(unsigned uf) {
 /*  */
 
 ```
+
+# 4 其他
+
+```sh
+liuzhenlong@debian:~/Lab_new/lab1-handout$ ./driver.pl
+1. Running './dlc -z' to identify coding rules violations.
+
+2. Compiling and running './btest -g' to determine correctness score.
+gcc -O -Wall -m32 -lm -o btest bits.c btest.c decl.c tests.c
+btest.c: In function ‘test_function’:
+btest.c:332:23: warning: ‘arg_test_range[1]’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+     if (arg_test_range[1] < 1)
+         ~~~~~~~~~~~~~~^~~
+
+3. Running './dlc -Z' to identify operator count violations.
+
+4. Compiling and running './btest -g -r 2' to determine performance score.
+gcc -O -Wall -m32 -lm -o btest bits.c btest.c decl.c tests.c
+btest.c: In function ‘test_function’:
+btest.c:332:23: warning: ‘arg_test_range[1]’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+     if (arg_test_range[1] < 1)
+         ~~~~~~~~~~~~~~^~~
+
+
+5. Running './dlc -e' to get operator count of each function.
+```
+
+运行`./driver.pl`会报warning，批改学生作业时，有一个同学提出了解答：👍
+
+> 关于 ./driver.pl 中的预警问题，是因为 ./btest.c 在299行申请的变量没有进行初始化赋值，后面的程序检测到这个位置可能会被访问而提出的预警，给其付个初始值即可解决
 
 # X 参考
 

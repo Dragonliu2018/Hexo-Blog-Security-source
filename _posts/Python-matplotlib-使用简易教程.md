@@ -2,10 +2,9 @@
 title: Python-matplotlib-使用简易教程
 date: 2022-01-17 09:44:22
 tags: 
-- python
 categories:
     - [环境与工具]
-    - [开发]
+    - [Python]
 # keywords:
 description:
 top: #True #顶置

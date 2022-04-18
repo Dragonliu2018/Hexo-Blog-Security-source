@@ -1,10 +1,10 @@
 ---
 title: Python-Mysql-通过SQLAlchemy操作
 tags:
-  - python
   - MySQL
 categories:
-  - 开发
+  - [Python]
+  - [数据库]
 toc: true
 mathjax: true
 top: false

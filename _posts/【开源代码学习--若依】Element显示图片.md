@@ -2,9 +2,8 @@
 title: 【开源代码学习--若依】Element显示图片
 tags:
   - Element
-  - 若依
 categories:
-  - 开发
+  - 前端
 toc: true
 mathjax: true
 top: false

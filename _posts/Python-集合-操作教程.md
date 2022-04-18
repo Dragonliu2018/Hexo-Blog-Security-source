@@ -1,9 +1,8 @@
 ---
 title: Python-集合-操作教程
 tags:
-  - python
 categories:
-  - 开发
+  - Python
 toc: true
 mathjax: true
 top: false

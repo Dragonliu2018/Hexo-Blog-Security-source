@@ -2,9 +2,9 @@
 title: MySQL-数据类型以及sqlalchemy中的对应
 tags:
   - MySQL
-  - python
 categories:
-  - 开发
+  - [Python]
+  - [数据库]
 toc: true
 mathjax: true
 top: false

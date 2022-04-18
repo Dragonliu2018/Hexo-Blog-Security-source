@@ -25,33 +25,39 @@ comments: false
 
 > 负责一些生活和黑科技板块
 
-|                目录名称                 |                  简介                   |                            手机端                            |                  标签                  |                             来源                             |
-| :-------------------------------------: | :-------------------------------------: | :----------------------------------------------------------: | :------------------------------------: | :----------------------------------------------------------: |
-|    <font color=green>**安全**</font>    |     `热点`标签是热点事件或技术复现      |                              -                               | `Web`、`Crypto`、`Pwn`、`Misc`、`热点` |  CSDN、[阮一峰](https://www.ruanyifeng.com/blog/)、安全客、  |
-|    <font color=green>**开发**</font>    |     `热点`标签是热点事件或技术复现      |                              -                               |  `C++`、`C`、`python`、`Java`、`热点`  |                              -                               |
-| <font color=green>**环境与工具**</font> |        环境搭建和工具使用等内容         |                              -                               |                 `Hexo`                 |                              -                               |
-|    <font color=green>**折腾**</font>    |          暂时未进行分类的内容           |                              -                               |             `区块链`、`CV`             |                              -                               |
-|    <font color=green>**阅读**</font>    | 阅读App读书与做笔记，读完一本书进行书评 | <font color='blue'>阅读</font>、<font color=blue>备忘录-摘抄</font> |         `书评`、`摘抄`、`诗词`         | 阅读APP、豆瓣、[有画说艺](https://www.ixigua.com/home/93140694146/?wid_try=1)、其他 |
-|    <font color=green>**音乐**</font>    |                    -                    |                              -                               |                   -                    |                Apple Music、QQ、网易云、豆瓣                 |
-|    <font color=green>**旅行**</font>    |                    -                    |              <font color=blue>相册-相簿</font>               |                   -                    |                              -                               |
-|    <font color=green>**影视**</font>    |                    -                    |             <font color=blue>备忘录-影视</font>              |       `电影`、`纪录片`、`电视剧`       |                             豆瓣                             |
-|    <font color=green>**百科**</font>    |    杂七杂八，后期可能以其中的tag分类    |                              -                               | `科普`、`文化`、`历史`、`时评`、`财经` |                              -                               |
-|    <font color=green>**英语**</font>    |   <font color='red'>该部分待定</font>   |                              -                               |                   -                    |                              -                               |
+|                目录名称                 |                  简介                   |                      标签                      |                             来源                             |
+| :-------------------------------------: | :-------------------------------------: | :--------------------------------------------: | :----------------------------------------------------------: |
+|   <font color=green>**数据库**</font>   |               数据库相关                |           `MySQL`、`Redis`、`Neo4j`            |                              -                               |
+|     <font color=green>**OS**</font>     |              操作系统相关               |                       -                        |                              -                               |
+|    <font color=green>**计组**</font>    |        计算机组成原理相关的内容         |                       -                        |                              -                               |
+|    <font color=green>**安全**</font>    |                安全相关                 |  `Web`、`Crypto`、`Pwn`、`Misc`、`WP`、`漏洞`  |                              -                               |
+|    <font color=green>**C++**</font>     |                    -                    |                      `QT`                      |                              -                               |
+|   <font color=green>**Python**</font>   |                    -                    |               `Flask`、`Django`                |                              -                               |
+|    <font color=green>**Java**</font>    |                    -                    |         `Spring Boot`、`Spring`、、、          |                                                              |
+|    <font color=green>**前端**</font>    |                    -                    |                `Element`、`Vue`                |                                                              |
+|    <font color=green>**爬虫**</font>    |                    -                    |              `selenium`、`Scrapy`              |                                                              |
+|   <font color=green>**大数据**</font>   |                    -                    |                       -                        |                              -                               |
+|     <font color=green>**AI**</font>     |                    -                    |                `CV`、`深度学习`                |                              -                               |
+| <font color=green>**环境与工具**</font> |        环境搭建和工具使用等内容         |                 `Hexo`、`Git`                  |                              -                               |
+|    <font color=green>**阅读**</font>    | 阅读App读书与做笔记，读完一本书进行书评 |        `书评`、`摘抄`、`诗词`、`IT书籍`        | 阅读APP、豆瓣、[有画说艺](https://www.ixigua.com/home/93140694146/?wid_try=1)、其他 |
+|    <font color=green>**音乐**</font>    |                    -                    |                       -                        |                Apple Music、QQ、网易云、豆瓣                 |
+|    <font color=green>**影视**</font>    |                    -                    |           `电影`、`纪录片`、`电视剧`           |                             豆瓣                             |
+|  <font color=green>**杂七杂八**</font>  |         后期可能以其中的tag分类         | `科普`、`文化`、`历史`、`时评`、`财经`、`英语` | [李永乐](https://www.youtube.com/c/%E6%9D%8E%E6%B0%B8%E4%B9%90%E8%80%81%E5%B8%88/playlists)、[王林林](https://www.youtube.com/channel/UCGPJcWooeTbD2AFEdIL8RBA) |
+|   <font color=green>**未分类**</font>   |          暂时未进行分类的内容           |                `区块链`、`重构`                |                              -                               |
+|                    -                    |       表示需要补充的不完整的博客        |                    `待补充`                    |                              -                               |
 
 ## 1.2 Github & Gitee
 
 > 负责一些成模块的板块，同步更新到Github及Gitee
 
-|                         板块名称                          |                  简介                  |                             本地                             |                         Github                         |                            Gitee                             |                    Gitbook                    |
-| :-------------------------------------------------------: | :------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------: | :----------------------------------------------------------: | :-------------------------------------------: |
-|          <font color='green'>**年终总结**</font>          |      该部分比较隐私，只在电脑本地      |                              -                               |                           -                            |                              -                               |                       -                       |
-|     <font color='green'>**面经（Interview）**</font>      |     整理面经部分，一些热点面试问题     | <font color=blue>E:\04 Worker_work\01 实习\面经\Interview</font> |   [跳转](https://github.com/Dragonliu2018/Interview)   |  [跳转](https://gitee.com/dragon-liu/interview/tree/master)  |                   [跳转]()                    |
-|     <font color='green'>**算法（Algorithm）**</font>      |      根据每天leetcode进行整理算法      |      <font color=blue>E:\08 Algorithm\Algorithm</font>       |   [跳转](https://github.com/Dragonliu2018/Algorithm)   |        [跳转](https://gitee.com/dragon-liu/Algorithm)        | [跳转](http://dragon-liu.gitee.io/algorithm/) |
-|            <font color='green'>**CTF**</font>             |       一些比赛的WP，复现一些题目       |     <font color=blue>E:\02 Competition\01 CTF\CTF</font>     |      [跳转](https://github.com/Dragonliu2018/CTF)      |           [跳转](https://gitee.com/dragon-liu/ctf)           |                   [跳转]()                    |
-|   <font color='green'>**漏洞（Vulnerability）**</font>    |             漏洞复现与发现             | <font color=blue>E:\06 Scientific_research\01漏洞\Vulnerability</font> | [跳转](https://github.com/Dragonliu2018/Vulnerability) |      [跳转](https://gitee.com/dragon-liu/vulnerability)      |                   [跳转]()                    |
-| <font color='green'>**勒索软件(恶意代码)检测综述**</font> | Ransomware or Malware Detection Survey | <font color=blue>E:\06 Scientific_research\02恶意代码检测\Ransomware or Malware Detection Survey</font> |                           -                            | [跳转](https://gitee.com/dragon-liu/ransomware-or-malware-detection-survey) |                   [跳转]()                    |
-|            <font color='green'>**论文**</font>            |                   -                    |                              -                               |                           -                            |                              -                               |                       -                       |
-|          <font color='green'>**其他项目**</font>          |                                        | <font color=blue>E:\05 Code</font>或[Hexo Blog-项目](https://dragonliu.tk/repository/) |                           -                            |                              -                               |                       -                       |
+|                         板块名称                          |                  简介                  |                             本地                             |                       Github                       |                            Gitee                             |                    Gitbook                    |
+| :-------------------------------------------------------: | :------------------------------------: | :----------------------------------------------------------: | :------------------------------------------------: | :----------------------------------------------------------: | :-------------------------------------------: |
+|     <font color='green'>**面经（Interview）**</font>      |     整理面经部分，一些热点面试问题     | <font color=blue>E:\04 Worker_work\01 实习\面经\Interview</font> | [跳转](https://github.com/Dragonliu2018/Interview) |  [跳转](https://gitee.com/dragon-liu/interview/tree/master)  |                   [跳转]()                    |
+|     <font color='green'>**算法（Algorithm）**</font>      |      根据每天leetcode进行整理算法      |      <font color=blue>E:\08 Algorithm\Algorithm</font>       | [跳转](https://github.com/Dragonliu2018/Algorithm) |        [跳转](https://gitee.com/dragon-liu/Algorithm)        | [跳转](http://dragon-liu.gitee.io/algorithm/) |
+|       <font color='green'>**周报与年终总结**</font>       |      该部分比较隐私，只在电脑本地      |                      `周报`、`年终总结`                      |                         -                          |                              -                               |                       -                       |
+| <font color='green'>**勒索软件(恶意代码)检测综述**</font> | Ransomware or Malware Detection Survey | <font color=blue>E:\06 Scientific_research\02恶意代码检测\Ransomware or Malware Detection Survey</font> |                         -                          | [跳转](https://gitee.com/dragon-liu/ransomware-or-malware-detection-survey) |                   [跳转]()                    |
+|            <font color='green'>**论文**</font>            |                   -                    |                              -                               |                         -                          |                              -                               |                       -                       |
+|          <font color='green'>**其他项目**</font>          |                                        | <font color=blue>E:\05 Code</font>或[Hexo Blog-项目](https://dragonliu.tk/repository/) |                         -                          |                              -                               |                       -                       |
 
 ## 1.3 Notion
 
@@ -75,7 +81,7 @@ comments: false
 * **通用语言开发**：`VSCode`
 * **Git**：`TortoiseGit`
 * **文件(夹)差异比较**：`Beyond Compare`
-* **虚拟机**：`VMware`
+* **虚拟机**：`VMware`、`VXBox`
 * **科学上网**：`Clash` + [Dukou](https://dukou.icu/user/index)
 * **浏览器**：`Chrome`
   * 拓展管理：`扩展管理器（Extension Manager）`

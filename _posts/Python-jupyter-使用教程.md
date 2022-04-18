@@ -1,11 +1,11 @@
 ---
 title: Python-jupyter-使用教程
 date: 2022-01-17 09:44:22
-tags: 
-- python
+tags:
+  - 待补充
 categories:
     - [环境与工具]
-    - [开发]
+    - [Python]
 # keywords:
 description:
 top: #True #顶置

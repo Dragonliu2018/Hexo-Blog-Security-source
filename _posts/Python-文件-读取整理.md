@@ -1,9 +1,10 @@
 ---
 title: Python-文件-读取整理
 date: 2022-01-17 09:44:22
-tags: python
+tags: 
+  - 待补充
 categories:
-    - [开发]
+    - Python
 # keywords:
 description:
 top: #True #顶置

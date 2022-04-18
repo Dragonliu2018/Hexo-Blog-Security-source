@@ -2,9 +2,8 @@
 title: Python-全局变量-list
 date: 2021-06-27 09:44:22
 tags: 
-- python
 categories:
-    - [开发]
+    - Python
 # keywords:
 description:
 top: #True #顶置

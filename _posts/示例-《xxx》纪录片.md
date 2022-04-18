@@ -1,7 +1,7 @@
 ---
 title: 示例-《xxx》纪录片
 tags:
-  - 待看
+  - 待补充
   - 纪录片
 categories:
   - 影视

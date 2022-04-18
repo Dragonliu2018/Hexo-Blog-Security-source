@@ -1,11 +1,9 @@
 ---
 title: Python-graphviz模块-使用教程
 tags:
-  - python
-  - Graphviz
 categories:
   - [环境与工具]
-  - [开发]
+  - [Python]
 toc: true
 mathjax: true
 top: false

@@ -1,9 +1,9 @@
 ---
 title: MR(merge request) vs PR(pull request)
 tags:
-  - git
+  - Git
 categories:
-  - 开发
+  - 环境与工具
 toc: true
 mathjax: true
 top: false

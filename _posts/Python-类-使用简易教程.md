@@ -1,9 +1,9 @@
 ---
 title: Python-类-使用简易教程
 tags:
-  - python
+  - 待补充
 categories:
-  - 开发
+  - Python
 toc: true
 mathjax: true
 top: false

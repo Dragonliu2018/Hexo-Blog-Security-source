@@ -2,8 +2,8 @@
 title: 《代码整洁之道 clean code》笔记
 tags:
   - IT书籍
+  - 重构
 categories:
-  - [开发]
   - [阅读]
 toc: true
 mathjax: true

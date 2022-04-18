@@ -2,11 +2,10 @@
 title: 【开源代码学习--若依】vue+springboot文件下载
 tags:
   - Vue
-  - Java
   - Spring Boot
-  - 若依
 categories:
-  - 开发
+  - [Java]
+  - [前端]
 toc: true
 mathjax: true
 top: false

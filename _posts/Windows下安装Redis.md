@@ -3,7 +3,8 @@ title: Windows下安装Redis
 tags:
   - Redis
 categories:
-  - 环境与工具
+  - [环境与工具]
+  - [数据库]
 toc: true
 mathjax: true
 top: false

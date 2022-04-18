@@ -1,9 +1,8 @@
 ---
 title: Jenkins配置定时发送邮件功能
 tags:
-  - Jenkins
 categories:
-  - 开发
+  - 环境与工具
 toc: true
 mathjax: true
 top: false
@@ -50,103 +49,7 @@ Jenkins 可以被作为一个独立应用安装，作为 Java servlet 容器（�
 python3 send_report_email.py -u "用户ID/codehub密码的Base64编码" "本人邮箱" "$Receiver" "$Copyer" "$ReportFile" "$Subject" "$ReportLink"
 ```
 
-`send_report_email.py`脚本内容如下：
-
-```python
-#!/usr/bin/python3
-# -*- coding: UTF-8 -*-
-"""
-使用python发邮件，使用前修改userid/password等相关信息
-"""
-import base64
-import os
-import smtplib
-import sys
-import re
-from email.mime.text import MIMEText
-
-SMTPserver = 'smtpscn.huawei.com'
-sender = sys.argv[3]
-receiver = sys.argv[4]
-copyer = sys.argv[5]
-reportfile = sys.argv[6]
-reportlink = sys.argv[8]
-
-# 不输入参数时使用本函数中缺省设置的参数
-def setParam():
-    # 用户信息
-    sys.argv.append("-u")
-    sys.argv.append("/") # svn用户名密码，使用前要更新为自己的，格式p00274812/XXXXX
-
-
-def usage():
-    print("python send_report_email.py -u userid/password")
-    print(" -u take your svn userid/password, it is a request param")
-
-
-def prepareMailContent():
-    message = ""
-    if os.path.isfile(reportfile):
-        message = open(reportfile, 'r', encoding="GBK").read()
-    tvmpattern = re.compile(r'total.*seconds!')
-    matchMsg = re.search(tvmpattern, message)
-    if matchMsg:
-        message = matchMsg.group()
-    else:
-        message = "failed to obtain the execution result."
-    print("message=%s" % message)
-    return message
-
-
-def sendEmail(userid, password, mailContent):
-    msg = MIMEText("""
-        <table color="CCCC33" width="1200" border="1" cellspacing="0" cellpadding="5" text-align="center">
-            <tr>
-                <td style="width: 140px" text-align="center">执行结果</td>
-            </tr>
-        </table>""" % (reportlink), "HTML", "UTF-8")
-    msg["Subject"] = sys.argv[7]
-    msg["From"] = sender
-    msg["To"] = receiver
-    msg["Cc"] = copyer
-
-    mailserver = smtplib.SMTP()
-    mailserver.connect(SMTPserver, 25)
-    mailserver.set_debuglevel(1)
-    mailserver.login(userid, password)
-    mailserver.sendmail(sender, receiver.split(",") + copyer.split(","), msg.as_string())
-    mailserver.quit()
-
-    print("Send email success!")
-
-
-def main():
-    if len(sys.argv) <= 2:
-        setParam()
-
-    wd = sys.argv[1]
-    if wd == "-u":
-        wd = sys.argv[2]
-        if wd.find('/') != -1:
-            userid = wd[0:wd.find('/')]
-            password = wd[wd.find('/') + 1:len(wd)]
-
-    if userid == '' or password == '':
-        usage()
-        print("\nplease input a svn userid/password ")
-        return
-
-    bytes = password.encode(encoding="utf-8", errors='strict')
-    newbpassword = base64.b64decode(bytes)
-    newpassword = newbpassword.decode(encoding="utf-8", errors="strict")
-
-    mailContent = prepareMailContent()
-    sendEmail(userid, newpassword, mailContent)
-
-
-if __name__ == '__main__':
-    main()
-```
+`send_report_email.py`脚本路径目录：`E:\04 Worker_work\01 实习\202109-华为C++后端实习\hw-addlcov\CBS-SW\01_RB\scripts`
 
 # 2 Jenkins 定时任务时间设置
 

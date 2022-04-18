@@ -1,9 +1,8 @@
 ---
 title: Python-多线程&多进程-编程教程
 tags:
-  - python
 categories:
-  - 开发
+  - Python
 toc: true
 mathjax: true
 top: false

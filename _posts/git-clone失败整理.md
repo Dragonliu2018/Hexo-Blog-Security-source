@@ -1,9 +1,10 @@
 ---
 title: git clone失败整理
 tags:
-  - git
+  - Git
+  - 待补充
 categories:
-  - 开发
+  - 环境与工具
 toc: true
 mathjax: true
 top: false

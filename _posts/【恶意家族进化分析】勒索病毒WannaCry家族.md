@@ -1,6 +1,7 @@
 ---
 title: 【恶意家族进化分析】勒索病毒WannaCry家族
 tags:
+  - 待补充
 categories:
   - 安全
 toc: true

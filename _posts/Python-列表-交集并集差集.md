@@ -1,9 +1,8 @@
 ---
 title: Python-列表-交集并集差集
 tags:
-  - python
 categories:
-  - 开发
+  - Python
 toc: true
 mathjax: true
 top: false

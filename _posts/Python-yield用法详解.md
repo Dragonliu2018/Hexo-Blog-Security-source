@@ -1,9 +1,9 @@
 ---
 title: Python-yield用法详解
 tags:
-  - python
+  - 待补充
 categories:
-  - 开发
+  - Python
 toc: true
 mathjax: true
 top: false

@@ -1,9 +1,8 @@
 ---
 title: Python-解决循环引用问题
 tags:
-  - python
 categories:
-  - 开发
+  - Python
 toc: true
 mathjax: true
 top: false

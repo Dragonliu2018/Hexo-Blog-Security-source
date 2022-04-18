@@ -1,6 +1,7 @@
 ---
 title: 修复TortoiseGit文件夹和文件状态图标不显示问题
 tags:
+  - Git
 categories:
   - 环境与工具
 toc: true

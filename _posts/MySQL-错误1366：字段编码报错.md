@@ -2,9 +2,9 @@
 title: MySQL-错误1366：字段编码报错
 tags:
   - MySQL
-  - python
 categories:
-  - 开发
+  - [Python]
+  - [数据库]
 toc: true
 mathjax: true
 top: false

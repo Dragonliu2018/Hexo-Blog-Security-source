@@ -2,7 +2,7 @@
 title: 借助gitbook与Gitee Pages服务搭建静态网站
 tags:
 categories:
-  - 环境与工具
+  - [环境与工具]
 toc: true
 mathjax: true
 top: false

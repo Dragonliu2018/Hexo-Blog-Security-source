@@ -1,9 +1,8 @@
 ---
 title: Python-字符串-去除首尾的指定字符
 tags:
-  - python
 categories:
-  - 开发
+  - Python
 toc: true
 mathjax: true
 top: false

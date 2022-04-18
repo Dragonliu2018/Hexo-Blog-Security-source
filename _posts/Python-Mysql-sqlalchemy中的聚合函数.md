@@ -2,9 +2,9 @@
 title: Python-Mysql-sqlalchemy中的聚合函数
 tags:
   - MySQL
-  - python
 categories:
-  - 开发
+  - [Python]
+  - [数据库]
 toc: true
 mathjax: true
 top: false

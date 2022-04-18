@@ -1,9 +1,8 @@
 ---
 title: Python-os模块-遍历文件夹下的所有文件
 tags:
-  - python
 categories:
-  - 开发
+  - Python
 toc: true
 mathjax: true
 top: false

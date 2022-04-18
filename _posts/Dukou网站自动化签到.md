@@ -1,10 +1,9 @@
 ---
 title: Dukou网站自动化签到
 tags:
-  - 爬虫
   - selenium
 categories:
-  - 开发
+  - [爬虫]
 toc: true
 mathjax: true
 top: false

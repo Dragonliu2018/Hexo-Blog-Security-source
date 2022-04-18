@@ -2,11 +2,9 @@
 title: 基于SR的全量/增量覆盖率统计
 date: 2021-09-27 09:44:22
 tags: 
-  - C++
-  - Jenkins
 categories:
     - [环境与工具]
-    - [开发]
+    - [C++]
 # keywords:
 description:
 top: #True #顶置

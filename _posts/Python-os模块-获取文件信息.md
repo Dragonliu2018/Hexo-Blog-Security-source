@@ -1,9 +1,8 @@
 ---
 title: Python-os模块-获取文件信息
 tags:
-  - python
 categories:
-  - 开发
+  - Python
 toc: true
 mathjax: true
 top: false

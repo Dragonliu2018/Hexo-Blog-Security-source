@@ -1,10 +1,10 @@
 ---
 title: selenium爬虫教程
 tags:
-  - 爬虫
   - selenium
+  - 待补充
 categories:
-  - 开发
+  - 爬虫
 toc: true
 mathjax: true
 top: false

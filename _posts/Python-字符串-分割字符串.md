@@ -1,9 +1,8 @@
 ---
 title: Python-字符串-分割字符串
 tags:
-  - python
 categories:
-  - 开发
+  - Python
 toc: true
 mathjax: true
 top: false

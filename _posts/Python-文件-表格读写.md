@@ -1,9 +1,8 @@
 ---
 title: Python-文件-表格读写
 tags:
-  - python
 categories:
-  - 开发
+  - Python
 toc: true
 mathjax: true
 top: false

@@ -1,9 +1,8 @@
 ---
 title: Python-time模块-测量程序运行时间
 tags:
-  - python
 categories:
-  - 开发
+  - Python
 toc: true
 mathjax: true
 top: false

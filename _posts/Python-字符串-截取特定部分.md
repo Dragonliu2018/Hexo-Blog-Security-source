@@ -1,9 +1,8 @@
 ---
 title: Python-字符串-截取特定部分
 tags:
-  - python
 categories:
-  - 开发
+  - Python
 toc: true
 mathjax: true
 top: false

@@ -1,9 +1,8 @@
 ---
 title: Python-文件-csv文件读取
 tags:
-  - python
 categories:
-  - 开发
+  - Python
 toc: true
 mathjax: true
 top: false

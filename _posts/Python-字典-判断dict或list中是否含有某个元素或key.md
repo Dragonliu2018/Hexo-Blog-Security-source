@@ -1,9 +1,8 @@
 ---
 title: Python-字典-判断dict或list中是否含有某个元素或key
 tags:
-  - python
 categories:
-  - 开发
+  - Python
 toc: true
 mathjax: true
 top: false

@@ -1,9 +1,8 @@
 ---
 title: C++项目的全量覆盖率和增量覆盖率
 tags:
-  - C++
 categories:
-  - 开发
+  - C++
 toc: true
 mathjax: true
 top: false
