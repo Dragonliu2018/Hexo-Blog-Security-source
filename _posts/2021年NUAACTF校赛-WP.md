@@ -1,9 +1,8 @@
 ---
 title: 2021年nuaa校赛 WP
 tags:
-  - CTF
 categories:
-  - WP
+  - [CTF, WP]
 toc: true
 mathjax: true
 top: false

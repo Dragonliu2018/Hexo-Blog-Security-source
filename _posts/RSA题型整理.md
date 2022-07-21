@@ -2,9 +2,8 @@
 title: RSA题型整理
 date: 2020-07-07 10:09:17
 tags: 
-- CTF
 categories:
-    - [Crypto]
+    - [CTF, Crypto]
 # keywords:
 description:
 top: #True #顶置

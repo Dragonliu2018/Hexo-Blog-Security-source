@@ -1,9 +1,8 @@
 ---
 title: 中科大2021年Hackergame WP
 tags:
-  - CTF
 categories:
-  - WP
+  - [CTF, WP]
 toc: true
 mathjax: true
 top: false

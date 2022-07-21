@@ -2,9 +2,8 @@
 title: CTF编码加密整理
 date: 2020-07-13 09:04:26
 tags:
-- CTF
 categories:
-    - [Crypto]
+    - [CTF, Crypto]
 # keywords:
 description:
 top: #True #顶置
